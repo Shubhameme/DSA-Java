@@ -41,4 +41,4 @@ This repository contains my practice code for various Data Structures and Algori
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Shubhameme/dsa-practice.git
+   git clone https://github.com/Shubhameme/DSA-Java.git
