@@ -2,22 +2,23 @@ package dsa.stack;
 
 import java.util.EmptyStackException;
 
-public class StackRunner {
-	
+public class Stack {
+
 	private ListNode top;
 	private int length;
-	
+
 	private class ListNode {
 		private int data;
 		private ListNode next;
-		
+
 		public ListNode(int data) {
 			this.data = data;
-			this.next = null;
+
 		}
+
 	}
 	
-	public StackRunner() {
+	public Stack() {
 		top = null;
 		length = 0;
 	}
@@ -35,35 +36,46 @@ public class StackRunner {
 		temp.next = top;
 		top = temp;
 		length++;
+		 
 	}
 	
 	public int pop() {
-		if (isEmpty()) {
+		if(isEmpty()) {
 			throw new EmptyStackException();
 		}
 		int result = top.data;
 		top = top.next;
 		length--;
 		return result;
+		
 	}
 	
 	public int peek() {
-		if (isEmpty()) {
+		if(isEmpty()) {
 			throw new EmptyStackException();
 		}
-		return top.data;	
+		return top.data;
 	}
+
 	
+	
+
 	public static void main(String[] args) {
-		StackRunner stack = new StackRunner();
+		
+		Stack stack = new Stack();
+		
 		stack.push(10);
 		stack.push(15);
 		stack.push(20);
 		
-		System.out.println("Top element is: " + stack.peek());
-		System.out.println("Stack size is: " + stack.length());
-		
 		stack.pop();
-		System.out.println("Top element after pop: " + stack.peek());
+		System.out.println(stack.peek());
+		stack.pop();
+		System.out.println(stack.peek());
+		stack.pop();
+		System.out.println(stack.peek());
+		stack.pop();
+
 	}
+
 }
